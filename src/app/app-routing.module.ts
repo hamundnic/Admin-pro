@@ -1,38 +1,27 @@
 import { NgModule } from '@angular/core';
 import {RouterModule,Routes} from '@angular/router';
+
+import { NopagefoundComponent } from './nopagefound/nopagefound.component';
+
+
+// ChildRoutes
+import { PagesRoutingModule } from './pages/pages.routing';
+import { AuthModule } from './auth/auth.module';
+import { AuthRoutingModule } from './auth/auth.routing';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
-import { Grafica1Component } from './pages/grafica1/grafica1.component';
-import { NopagefoundComponent } from './pages/nopagefound/nopagefound.component';
-import { ProgressComponent } from './pages/progress/progress.component';
-import { PagesComponent } from './pages/pages.component';
 
 const routes: Routes = [
-  {
-    path:'',
-    component: PagesComponent,
-    children:[
-       {path: 'dashboard', component: DashboardComponent},
-       {path: 'progress', component: ProgressComponent},
-       {path: 'grafica1', component: Grafica1Component},
-{path: '', redirectTo: '/dashboard', pathMatch: 'full'}
-]
-
-},
- 
-
-
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
- 
-  
-  {path: '**', component: NopagefoundComponent}
+  {path: '**', component: NopagefoundComponent},
+  {path: '', redirectTo: '/dashboard' ,pathMatch: 'full'}
 ]
 
 @NgModule({
-  declarations: [],
-  imports: [RouterModule.forRoot(routes)],
+  
+  imports: [RouterModule.forRoot(routes),
+  PagesRoutingModule,
+  AuthModule,
+  AuthRoutingModule
+  ],
   exports:[RouterModule]
 })
 export class AppRoutingModule { }
