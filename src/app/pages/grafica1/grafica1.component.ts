@@ -7,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class Grafica1Component implements OnInit {
-
+labels1= ['pan', 'refrescos', 'tacos'];
+data1 = [
+  [10, 15, 40]
+];
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
+
+  // events
+ 
 
 }

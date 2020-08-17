@@ -12,7 +12,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 const routes: Routes = [
   {path: '**', component: NopagefoundComponent},
-  {path: '', redirectTo: '/dashboard' ,pathMatch: 'full'}
+  {path: '', redirectTo: '/dashboard' , pathMatch: 'full'}
 ]
 
 @NgModule({
