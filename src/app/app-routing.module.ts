@@ -8,11 +8,12 @@ import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 import { PagesRoutingModule } from './pages/pages.routing';
 import { AuthModule } from './auth/auth.module';
 import { AuthRoutingModule } from './auth/auth.routing';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+
 
 const routes: Routes = [
-  {path: '**', component: NopagefoundComponent},
-  {path: '', redirectTo: '/dashboard' , pathMatch: 'full'}
+  
+  {path: '', redirectTo: '/dashboard' , pathMatch: 'full'},
+  {path: '*', component: NopagefoundComponent},
 ]
 
 @NgModule({
